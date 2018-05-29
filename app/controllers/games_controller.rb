@@ -6,15 +6,16 @@ class GamesController < ApplicationController
   end
 
   def index
-
+    render json: Game.all
   end
 
   def show
-
+    render json: Game.find(params[:id])
   end
 
   def update
-
+    game = Game.find(params[:id])
+    render json: game.update(game_params)
   end
 
   private
